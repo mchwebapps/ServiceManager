@@ -1,0 +1,689 @@
+{
+  "actions": [
+    {
+      "name": "Demontaż starego wyświetlacza",
+      "defaultRate": 10,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Czyszczenie telefonu",
+      "defaultRate": 10
+    },
+    {
+      "name": "Montaż nowego wyświetlacza",
+      "defaultRate": 30,
+      "id": 3
+    },
+    {
+      "name": "Wgranie nowego softu",
+      "defaultRate": 50,
+      "id": 4
+    },
+    {
+      "name": "Rozklejenie szybki z LCD",
+      "defaultRate": 10,
+      "id": 5
+    }
+  ],
+  "deliveryMethods": [
+    {
+      "id": 1,
+      "name": "Dostarczenie osobiste"
+    },
+    {
+      "id": 2,
+      "name": "Wysyłka kurierem"
+    }
+  ],
+  "deviceTypes": [
+    {
+      "name": "Telefon",
+      "parameters": [
+        {
+          "id": 1,
+          "name": "Marka",
+          "category": "device",
+          "type": "SingleSelect",
+          "values": [
+            {
+              "id": 2,
+              "text": "Apple"
+            },
+            {
+              "id": 3,
+              "text": "Samsung"
+            },
+            {
+              "id": 4,
+              "text": "Nokia"
+            }
+          ],
+          "value": "",
+          "isMain": true
+        },
+        {
+          "id": 2,
+          "name": "Model",
+          "category": "device",
+          "type": "SingleSelect",
+          "values": [
+            {
+              "id": 5,
+              "text": "iPhone 7 Plus"
+            }
+          ],
+          "value": "",
+          "isMain": true
+        },
+        {
+          "id": 3,
+          "name": "Symbol",
+          "category": "device",
+          "type": "TextInput",
+          "values": [],
+          "value": "",
+          "isMain": false
+        }
+      ],
+      "services": [
+        {
+          "id": 2,
+          "name": "Wymiana szybki",
+          "actions": [],
+          "parameters": [],
+          "price": 1
+        }
+      ],
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Tablet",
+      "parameters": [
+        {
+          "id": 3,
+          "name": "Symbol",
+          "category": "device",
+          "type": "TextInput",
+          "values": [],
+          "value": "",
+          "isMain": false
+        }
+      ],
+      "services": []
+    },
+    {
+      "name": "Telewizor",
+      "parameters": [
+        {
+          "id": 7,
+          "name": "Opis usterki",
+          "category": "device",
+          "type": "TextArea",
+          "values": [],
+          "value": "",
+          "isMain": false
+        }
+      ],
+      "services": [],
+      "id": 3
+    }
+  ],
+  "documentTypes": [
+    {
+      "id": 1,
+      "name": "Faktura"
+    },
+    {
+      "id": 2,
+      "name": "Paragon"
+    },
+    {
+      "id": 3,
+      "name": "Umowa kupna-sprzedaży"
+    },
+    {
+      "id": 4,
+      "name": "Korekta magazynowa"
+    },
+    {
+      "id": 5,
+      "name": "Inny"
+    }
+  ],
+  "orderList": [
+    {
+      "id": 1,
+      "rma": "RMA-00169888-07-2022",
+      "customerId": "b545aec8-dad6-450a-9e38-607613c02620",
+      "customerName": "Izabela Brzozowska-Świątek",
+      "device": {
+        "id": 1,
+        "type": "Telefon",
+        "parameters": [
+          {
+            "id": 1,
+            "name": "Marka",
+            "value": "Samsung"
+          },
+          {
+            "id": 2,
+            "name": "Model",
+            "value": "Galaxy S20"
+          }
+        ],
+        "services": [
+          {
+            "id": 1,
+            "name": "Wymiana wyświetlacza",
+            "price": 100,
+            "parameters": [
+              {
+                "id": 4,
+                "name": "Test"
+              }
+            ]
+          }
+        ]
+      },
+      "workerId": 1,
+      "workerName": "Damian Michalski"
+    }
+  ],
+  "orderView": [
+    {
+      "id": 1,
+      "rma": "RMA-00169888-07-2022",
+      "admissionDate": "12.09.2022 14:00",
+      "deadline": "14.09.2022 14:00",
+      "priority": "Na spokojnie",
+      "customerId": "b545aec8-dad6-450a-9e38-607613c02620",
+      "customerName": "Izabela Brzozowska-Świątek",
+      "statusId": 1,
+      "salesDocument": "Faktura",
+      "paymentTerm": "14.09.2022 14:00",
+      "payment": 100,
+      "delivery": "Odbiór osobisty",
+      "problem": "Pęknięty wyświetlacz, konto Google",
+      "notice": "Naprawa do 200 zł",
+      "device": {
+        "id": 1,
+        "type": "Telefon",
+        "parameters": [
+          {
+            "id": 1,
+            "name": "Marka",
+            "category": "device",
+            "type": "SingleSelect",
+            "values": [
+              {
+                "id": 2,
+                "text": "Apple"
+              },
+              {
+                "id": 3,
+                "text": "Samsung"
+              },
+              {
+                "id": 4,
+                "text": "Nokia"
+              }
+            ],
+            "value": 2,
+            "isMain": true
+          },
+          {
+            "id": 2,
+            "name": "Model",
+            "category": "device",
+            "type": "SingleSelect",
+            "values": [
+              {
+                "id": 5,
+                "text": "iPhone 7 Plus"
+              }
+            ],
+            "value": 5,
+            "isMain": true
+          },
+          {
+            "id": 3,
+            "name": "Symbol",
+            "category": "device",
+            "type": "TextInput",
+            "values": "dv",
+            "value": "G980",
+            "isMain": true
+          },
+          {
+            "id": 4,
+            "name": "IMEI",
+            "category": "device",
+            "type": "TextInput",
+            "values": "",
+            "value": "3589938477593",
+            "isMain": false
+          },
+          {
+            "id": 5,
+            "name": "Blokada ekranu (PIN, Hasło)",
+            "category": "device",
+            "type": "Other",
+            "values": "",
+            "value": "1234",
+            "isMain": false
+          },
+          {
+            "id": 7,
+            "name": "Opis usterki",
+            "category": "device",
+            "type": "TextArea",
+            "values": [],
+            "value": "Pęknięty wyświetlacz, konto Google",
+            "isMain": false
+          },
+          {
+            "id": 51,
+            "name": "Uwagi",
+            "category": "device",
+            "type": "TextArea",
+            "values": [],
+            "value": "Naprawa do 200zł",
+            "isMain": false
+          }
+        ],
+        "services": [
+          {
+            "id": 1,
+            "name": "Wymiana wyświetlacza",
+            "price": 50
+          }
+        ]
+      },
+      "workerId": 1,
+      "workerName": "Damian Michalski"
+    }
+  ],
+  "parameters": [
+    {
+      "id": 1,
+      "name": "Marka",
+      "alias": "M",
+      "category": "device",
+      "type": "SingleSelect",
+      "isRequired": true
+    },
+    {
+      "id": 2,
+      "name": "Model",
+      "alias": "m",
+      "category": "device",
+      "type": "SingleSelect",
+      "isRequired": true
+    },
+    {
+      "id": 3,
+      "name": "Symbol",
+      "alias": "M",
+      "category": "device",
+      "type": "TextInput",
+      "values": [],
+      "isRequired": true
+    },
+    {
+      "id": 4,
+      "name": "IMEI",
+      "alias": "I",
+      "category": "device",
+      "type": "TextInput",
+      "values": [],
+      "isRequired": true
+    },
+    {
+      "id": 5,
+      "name": "Blokada ekranu (PIN, Hasło)",
+      "alias": "Bph",
+      "category": "device",
+      "type": "TextInput",
+      "values": [],
+      "isRequired": true
+    },
+    {
+      "id": 6,
+      "name": "Blokada ekranu (Wzór)",
+      "alias": "Bw",
+      "category": "device",
+      "type": "Other",
+      "values": [],
+      "isRequired": true
+    },
+    {
+      "id": 7,
+      "name": "Opis usterki",
+      "alias": "O",
+      "category": "device",
+      "type": "TextArea",
+      "values": [],
+      "isRequired": true
+    },
+    {
+      "id": 50,
+      "name": "Test",
+      "alias": "T",
+      "category": "service",
+      "type": "MultiSelect",
+      "values": [
+        {
+          "id": 6,
+          "text": "T2"
+        },
+        {
+          "id": 7,
+          "text": "T1"
+        }
+      ],
+      "isRequired": true
+    },
+    {
+      "id": 51,
+      "name": "Uwagi",
+      "alias": "U",
+      "category": "device",
+      "type": "TextArea"
+    }
+  ],
+  "parameterValues": [
+    {
+      "id": 2,
+      "text": "Apple",
+      "parameterId": 1
+    },
+    {
+      "id": 3,
+      "text": "Samsung",
+      "parameterId": 1
+    },
+    {
+      "id": 4,
+      "text": "Nokia",
+      "parameterId": 1
+    },
+    {
+      "id": 5,
+      "text": "iPhone 7 Plus",
+      "parameterId": 2
+    },
+    {
+      "id": 6,
+      "text": "T2",
+      "parameterId": 50
+    },
+    {
+      "id": 7,
+      "text": "T1",
+      "parameterId": 50
+    },
+    {
+      "id": 8,
+      "text": "Xiaomi",
+      "parameterId": 1
+    },
+    {
+      "id": 9,
+      "text": "test"
+    }
+  ],
+  "deviceParameters": [
+    {
+      "id": 1,
+      "name": "Marka",
+      "alias": "M",
+      "type": "MultiSelect",
+      "isRequired": true
+    },
+    {
+      "id": 2,
+      "name": "Model",
+      "alias": "m",
+      "type": "MultiSelect",
+      "isRequired": true
+    },
+    {
+      "id": 3,
+      "name": "Symbol",
+      "alias": "M",
+      "type": "TextInput",
+      "isRequired": true
+    },
+    {
+      "id": 4,
+      "name": "IMEI",
+      "alias": "I",
+      "type": "TextInput",
+      "isRequired": true
+    },
+    {
+      "id": 5,
+      "name": "Blokada ekranu (PIN, Hasło)",
+      "alias": "Bph",
+      "type": "TextInput",
+      "isRequired": true
+    },
+    {
+      "id": 6,
+      "name": "Blokada ekranu (Wzór)",
+      "alias": "Bw",
+      "type": "Other",
+      "isRequired": true
+    },
+    {
+      "id": 7,
+      "name": "Opis usterki",
+      "alias": "O",
+      "type": "TextArea",
+      "isRequired": true
+    }
+  ],
+  "paymentMethods": [
+    {
+      "id": 1,
+      "name": "Gotówka"
+    },
+    {
+      "id": 2,
+      "name": "Za pobraniem"
+    },
+    {
+      "id": 3,
+      "name": "Przelew"
+    },
+    {
+      "id": 4,
+      "name": "Karta płatnicza"
+    }
+  ],
+  "sellers": [
+    {
+      "id": 1,
+      "name": "tomaszhurtgsm@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "kontaktecolife@gmail.com"
+    }
+  ],
+  "services": [
+    {
+      "name": "Wymiana wyświetlacza",
+      "actions": [
+        {
+          "id": 3,
+          "name": "Montaż nowego wyświetlacza",
+          "isChecked": true,
+          "isVisible": true
+        },
+        {
+          "id": 4,
+          "name": "Wgranie nowego softu",
+          "isChecked": true,
+          "isVisible": true
+        },
+        {
+          "id": 5,
+          "name": "Rozklejenie szybki z LCD",
+          "isChecked": true,
+          "isVisible": true
+        }
+      ],
+      "parameters": [
+        {
+          "id": 50,
+          "name": "Test",
+          "value": "Testowa",
+          "category": "service",
+          "type": "TextInput"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "Wymiana szybki",
+      "actions": [
+        {
+          "id": 1,
+          "name": "Demontaż starego wyświetlacza",
+          "isChecked": true,
+          "isVisible": true
+        },
+        {
+          "id": 3,
+          "name": "Montaż nowego wyświetlacza",
+          "isChecked": true,
+          "isVisible": true
+        }
+      ],
+      "parameters": [],
+      "id": 2
+    }
+  ],
+  "serviceActions": [
+    {
+      "id": 1,
+      "serviceTypeId": 1,
+      "name": "Demontaż starego wyświetlacza",
+      "defaultRate": 20
+    },
+    {
+      "id": 2,
+      "serviceTypeId": 2,
+      "name": "Czyszczenie telefonu",
+      "defaultRate": 10
+    },
+    {
+      "id": 3,
+      "serviceTypeId": 1,
+      "name": "Montaż nowego wyświetlacza",
+      "defaultRate": 30
+    }
+  ],
+  "shippingMethods": [
+    {
+      "id": 1,
+      "name": "Odbiór osobisty"
+    },
+    {
+      "id": 2,
+      "name": "Wysyłka kurierem"
+    }
+  ],
+  "statuses": [
+    {
+      "name": "W trakcie naprawy",
+      "emailMessage": "",
+      "smsMessage": "Wiadomość SMS do klienta...",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Diagnozowanie usterki",
+      "emailMessage": "Wiadomość e-mail do klienta...",
+      "smsMessage": "Wiadomość SMS do klienta..."
+    },
+    {
+      "name": "W drodze do klienta",
+      "emailMessage": "Wiadomość e-mail do klienta...",
+      "smsMessage": "",
+      "id": 3
+    }
+  ],
+  "workers": [
+    {
+      "firstName": "Damian",
+      "lastName": "Michalski",
+      "workPositionId": 1,
+      "workPosition": "Serwisant",
+      "contractSince": "2020-12-01",
+      "contractTo": "",
+      "contractNoTerm": true,
+      "salaryNoTax": 3738,
+      "salaryWithTax": 5001,
+      "id": 1
+    }
+  ],
+  "workPositions": [
+    {
+      "id": 1,
+      "name": "Serwisant"
+    },
+    {
+      "name": "Magazynier",
+      "id": 2
+    },
+    {
+      "name": "Sprzedawca",
+      "id": 3
+    }
+  ],
+  "settlementStatuses": [
+    {
+      "id": 1,
+      "name": "Test",
+      "emailMessage": "Test Email Message",
+      "smsMessage": "Test SMS Message"
+    }
+  ],
+  "serviceStatuses": [
+    {
+      "id": 1,
+      "name": "Test",
+      "emailMessage": "Test Email Message",
+      "smsMessage": "Test SMS Message",
+      "order": 1
+    },
+    {
+      "id": 2,
+      "name": "Test 2",
+      "emailMessage": "Test 2 Email Message",
+      "smsMessage": "Test 2 SMS Message",
+      "order": 2
+    },
+    {
+      "id": 3,
+      "name": "Test 3",
+      "emailMessage": "Test 3 Email Message",
+      "smsMessage": "Test 3 SMS Message",
+      "order": 3
+    }
+  ],
+  "customers": [
+    {
+      "id": "b545aec8-dad6-450a-9e38-607613c02620",
+      "name": "Izabela Brzozowska-Świątek",
+      "taxNumber": "7978958383",
+      "email": "izabrzoswia@gmail.com",
+      "phone": "796796796",
+      "customerType": 1
+    }
+  ]
+}

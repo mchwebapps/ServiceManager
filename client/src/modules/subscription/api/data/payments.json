@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "moduleId": 1,
+    "subscriptionType": 1,
+    "invoiceId": 1,
+    "date": "2020-05-01",
+    "price": 197.89,
+    "currency": "zł",
+    "billing": 1,
+    "status": 1
+  },
+  {
+    "id": 2,
+    "moduleId": 2,
+    "subscriptionType": 2,
+    "invoiceId": 2,
+    "date": "2020-04-16",
+    "price": 66.89,
+    "currency": "zł",
+    "billing": 1,
+    "status": 2
+  }
+]

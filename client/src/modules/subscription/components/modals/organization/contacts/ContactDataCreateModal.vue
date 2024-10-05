@@ -1,0 +1,152 @@
+<template>
+  <AppModal :modal="modal.settings" :errors="validationErrors">
+
+    <template #close>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+        @click="reset()"
+      ></button>
+    </template>
+  
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-md-6 mb-3">
+          <label for="firstName" class="form-label">Imię:</label>
+          <input type="text" class="form-control form-control-sm" id="firstName" placeholder="Wpisz imię"  autocomplete="off" v-model="contact.firstName">
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+          <label for="lastName" class="form-label">Nazwisko:</label>
+          <input type="text" class="form-control form-control-sm" id="lastName" placeholder="Wpisz nazwisko" autocomplete="off" v-model="contact.lastName">
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+          <label for="phone" class="form-label">Nr telefonu:</label>
+          <input type="text" class="form-control form-control-sm" id="phone" placeholder="Wpisz numer telefonu" autocomplete="off" v-model="contact.phone">
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+          <label for="email" class="form-label">E-Mail:</label>
+          <input type="text" class="form-control form-control-sm" id="email" placeholder="Wpisz adres mailowy" autocomplete="off" v-model="contact.email">
+        </div>
+      </div>
+    </div>
+    <template #buttons>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        data-bs-dismiss="modal"
+        @click="reset()"
+      >
+        Zamknij
+      </button>
+      <button
+        type="submit"
+        :class="'btn btn-' + modal.settings.color"
+        :disabled="modal.btnLock"
+        @click="createContact()"
+      >
+        {{ modal.btnText }}
+      </button>
+    </template>
+
+    <template #error>
+      <AppErrorItems :errors="validationErrors" />
+    </template>
+  
+  </AppModal>
+</template>
+
+<script setup lang="ts">
+import { ref } from "vue"
+import Swal from "sweetalert2"
+import { Modal } from "bootstrap"
+import AppModal, { type IModal } from "@/components/AppModal.vue"
+import { OrganizationContactDTO } from "@/modules/subscription/api/dtos/OrganizationContactDTO"
+import { container } from "tsyringe"
+import type { IOrganizationContactService } from "@/modules/subscription/api/services/OrganizationContactService"
+import AppErrorItems from "@/components/AppErrorItems.vue"
+import ValidationError from "@/core/errors/ValidationError"
+
+// import { ErrorMessage, Field, Form } from "vee-validate"
+
+const props = defineProps({
+  organizationId: { type: String, required: true}
+})
+const emits = defineEmits(['refresh'])
+
+const modal = ref<IModal>({
+  settings: {
+    id: '#ContactDataCreateModal',
+    size: '',
+    backdrop: true,
+    keyboard: true,
+    title: 'Dane kontaktowe',
+    subtitle: 'Nowe dane',
+    color: 'success'
+  },
+  btnText: 'Dodaj',
+  btnLock: false
+})
+
+const organizationContactService = container.resolve('IOrganizationContactService') as IOrganizationContactService
+const contact = ref<OrganizationContactDTO>(new OrganizationContactDTO())
+
+let validationErrors = ref<{ key: string, errorMessage: string }[]>([])
+
+
+const reset = () => {
+  setTimeout(() => {
+    contact.value = new OrganizationContactDTO
+  }, 500)
+}
+
+
+const createContact = async () => {
+
+  try {
+    modal.value.btnLock = true
+    validationErrors.value = []
+
+    await organizationContactService.createContact(
+      props.organizationId,
+      contact.value
+    )
+
+    Swal.fire({
+      toast: true,
+      position: 'top-end',
+      icon: 'success',
+      title: 'Dane utworzone',
+      timer: 1000,
+      showConfirmButton: false,
+      showCloseButton: false,
+    }).then(() => {
+      Modal.getInstance(modal.value.settings.id)?.hide()
+      setTimeout(() => {
+        modal.value.btnLock = false
+        contact.value = new OrganizationContactDTO()
+      }, 1500)
+      emits('refresh')
+    })
+  } catch (error: any) {
+      if (error instanceof ValidationError) {
+        validationErrors.value = Object.keys(error.Errors).map(key => {
+          const arr = error.Errors[key] as []
+          console.log({ key, errorMessage:arr.join(',') })
+          return { key, errorMessage:arr.join(',') }
+        })
+        modal.value.btnLock = false
+        return
+      }
+      Swal.fire({
+        title: 'Błąd serwera!',
+        html: 'Poczekaj chwilę lub odśwież stronę i spróbuj ponownie.',
+        icon: 'error',
+        showConfirmButton: true,
+      }).then(() => {
+        modal.value.btnLock = false
+      })
+    }
+}
+</script>

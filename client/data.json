@@ -1,0 +1,870 @@
+{
+  "actions": [
+    {
+      "name": "Demontaż starego wyświetlacza",
+      "defaultRate": 10,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Czyszczenie telefonu",
+      "defaultRate": 10
+    },
+    {
+      "name": "Montaż nowego wyświetlacza",
+      "defaultRate": 30,
+      "id": 3
+    },
+    {
+      "name": "Wgranie nowego softu",
+      "defaultRate": 50,
+      "id": 4
+    },
+    {
+      "name": "Rozklejenie szybki z LCD",
+      "defaultRate": 10,
+      "id": 5
+    }
+  ],
+  "deliveryMethods": [
+    {
+      "id": 1,
+      "name": "Dostarczenie osobiste"
+    },
+    {
+      "name": "Wysyłka kurierem",
+      "id": 2
+    }
+  ],
+  "deviceTypes": [
+    {
+      "name": "Telefon",
+      "parameters": [
+        {
+          "id": 1,
+          "name": "Marka",
+          "category": "device",
+          "type": "SingleSelect",
+          "values": [
+            {
+              "id": 2,
+              "text": "Apple"
+            },
+            {
+              "id": 3,
+              "text": "Samsung"
+            },
+            {
+              "id": 4,
+              "text": "Nokia"
+            }
+          ],
+          "value": "",
+          "isMain": true
+        },
+        {
+          "id": 2,
+          "name": "Model",
+          "category": "device",
+          "type": "SingleSelect",
+          "values": [
+            {
+              "id": 5,
+              "text": "iPhone 7 Plus"
+            }
+          ],
+          "value": "",
+          "isMain": true
+        },
+        {
+          "id": 3,
+          "name": "Symbol",
+          "category": "device",
+          "type": "TextInput",
+          "values": [],
+          "value": "",
+          "isMain": false
+        }
+      ],
+      "services": [
+        {
+          "id": 2,
+          "name": "Wymiana szybki",
+          "actions": [],
+          "parameters": [
+            {
+              "id": 50,
+              "name": "Naprawa do",
+              "alias": "Nd",
+              "category": "service",
+              "type": "TextInput",
+              "isRequired": true
+            },
+            {
+              "id": 51,
+              "name": "Uwagi",
+              "alias": "U",
+              "category": "device",
+              "type": "TextArea"
+            },
+            {
+              "id": 52,
+              "name": "Zamiennik",
+              "alias": "Z",
+              "category": "service",
+              "type": "SingleSelect"
+            }
+          ],
+          "price": 1
+        },
+        {
+          "id": 1,
+          "name": "Wymiana wyświetlacza",
+          "actions": [],
+          "parameters": []
+        }
+      ],
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Tablet",
+      "parameters": [
+        {
+          "id": 3,
+          "name": "Symbol",
+          "category": "device",
+          "type": "TextInput",
+          "values": [],
+          "value": "",
+          "isMain": false
+        }
+      ],
+      "services": []
+    },
+    {
+      "name": "Telewizor",
+      "parameters": [
+        {
+          "id": 7,
+          "name": "Opis usterki",
+          "category": "device",
+          "type": "TextArea",
+          "values": [],
+          "value": "",
+          "isMain": false
+        }
+      ],
+      "services": [],
+      "id": 3
+    }
+  ],
+  "documentTypes": [
+    {
+      "name": "Faktura",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Paragon"
+    },
+    {
+      "id": 3,
+      "name": "Umowa kupna-sprzedaży"
+    },
+    {
+      "id": 4,
+      "name": "Korekta magazynowa"
+    },
+    {
+      "id": 5,
+      "name": "Inny"
+    }
+  ],
+  "orders": [
+    {
+      "departmentId": 1,
+      "customerId": "09ab17a3-7f84-401d-92cf-2991dd7e5db2",
+      "customerBillingId": 37,
+      "customerShippingId": 23,
+      "customerContactId": 30,
+      "devices": [
+        {
+          "id": 1,
+          "deviceTypeId": 1,
+          "parameters": [
+            {
+              "id": 1,
+              "name": "Marka",
+              "category": "device",
+              "type": "SingleSelect",
+              "values": [
+                {
+                  "id": 2,
+                  "text": "Apple"
+                },
+                {
+                  "id": 3,
+                  "text": "Samsung"
+                },
+                {
+                  "id": 4,
+                  "text": "Nokia"
+                }
+              ],
+              "value": 2,
+              "isMain": true
+            },
+            {
+              "id": 2,
+              "name": "Model",
+              "category": "device",
+              "type": "SingleSelect",
+              "values": [
+                {
+                  "id": 5,
+                  "text": "iPhone 7 Plus"
+                }
+              ],
+              "value": 5,
+              "isMain": true
+            },
+            {
+              "id": 3,
+              "name": "Symbol",
+              "category": "device",
+              "type": "TextInput",
+              "values": [],
+              "value": "A4332",
+              "isMain": false
+            }
+          ],
+          "services": [
+            {
+              "id": 2,
+              "name": "Wymiana szybki",
+              "price": 50
+            }
+          ],
+          "admissionDate": "2022-09-28",
+          "deadline": "2022-09-28",
+          "paymentTerm": "2022-09-28",
+          "workerId": 1
+        }
+      ],
+      "deliveryMethod": 1,
+      "shippingMethod": 1,
+      "shippingCost": 12,
+      "documentType": 2,
+      "paymentMethod": 1,
+      "priceNoTax": 100,
+      "paid": 0,
+      "priceWithTax": 123,
+      "comment": "...",
+      "id": 1
+    }
+  ],
+  "orderHistory": [
+    {
+      "id": 1,
+      "orderId": 1,
+      "date": "2022-09-28",
+      "name": "Damian Michalski",
+      "text": "Upuściłem!"
+    },
+    {
+      "id": 2,
+      "orderId": 1,
+      "date": "2022-09-25",
+      "name": "Robert Jaworski",
+      "text": "Zmiana statusu na <b>w trakcie naprawy</b>"
+    }
+  ],
+  "settlementOrderList": [
+    {
+      "id": 1,
+      "nr": "00169888",
+      "customerId": "b545aec8-dad6-450a-9e38-607613c02620",
+      "customerName": "Izabela Brzozowska-Świątek",
+      "products": [],
+      "priceWithTax": 200,
+      "deliveryId": 2,
+      "deliveryName": "Wysyłka kurierem",
+      "date": "2022-09-25"
+    }
+  ],
+  "orderList": [
+    {
+      "id": 1,
+      "rma": "RMA-00169888-07-2022",
+      "customerId": "b545aec8-dad6-450a-9e38-607613c02620",
+      "customerName": "Izabela Brzozowska-Świątek",
+      "device": {
+        "id": 1,
+        "type": "Telefon",
+        "parameters": [
+          {
+            "id": 1,
+            "name": "Marka",
+            "value": "Samsung"
+          },
+          {
+            "id": 2,
+            "name": "Model",
+            "value": "Galaxy S20"
+          }
+        ],
+        "services": [
+          {
+            "id": 1,
+            "name": "Wymiana wyświetlacza",
+            "price": 100,
+            "parameters": [
+              {
+                "id": 4,
+                "name": "Test"
+              }
+            ]
+          }
+        ]
+      },
+      "workerId": 1,
+      "workerName": "Damian Michalski"
+    }
+  ],
+  "orderView": [
+    {
+      "id": 1,
+      "rma": "RMA-00169888-07-2022",
+      "admissionDate": "2022-12-09",
+      "deadline": "2022-10-30",
+      "priority": "Na dziś",
+      "customerId": "b545aec8-dad6-450a-9e38-607613c02620",
+      "customerName": "Izabela Brzozowska-Świątek",
+      "statusId": 1,
+      "salesDocument": "Faktura",
+      "paymentTerm": "2022-12-20",
+      "payment": 100,
+      "delivery": "Odbiór osobisty",
+      "problem": "Pęknięty wyświetlacz, konto Google",
+      "notice": "Naprawa do 200 zł",
+      "device": {
+        "id": 1,
+        "type": "Telefon",
+        "parameters": [
+          {
+            "id": 1,
+            "name": "Marka",
+            "category": "device",
+            "type": "SingleSelect",
+            "values": [
+              {
+                "id": 2,
+                "text": "Apple"
+              },
+              {
+                "id": 3,
+                "text": "Samsung"
+              },
+              {
+                "id": 4,
+                "text": "Nokia"
+              }
+            ],
+            "value": 2,
+            "isMain": true
+          },
+          {
+            "id": 2,
+            "name": "Model",
+            "category": "device",
+            "type": "SingleSelect",
+            "values": [
+              {
+                "id": 5,
+                "text": "iPhone 7 Plus"
+              }
+            ],
+            "value": 5,
+            "isMain": true
+          },
+          {
+            "id": 3,
+            "name": "Symbol",
+            "category": "device",
+            "type": "TextInput",
+            "values": "dv",
+            "value": "G980",
+            "isMain": true
+          },
+          {
+            "id": 4,
+            "name": "IMEI",
+            "category": "device",
+            "type": "TextInput",
+            "values": "",
+            "value": "3589938477593",
+            "isMain": false
+          },
+          {
+            "id": 5,
+            "name": "Blokada ekranu (PIN, Hasło)",
+            "category": "device",
+            "type": "Other",
+            "values": "",
+            "value": "1234",
+            "isMain": false
+          },
+          {
+            "id": 7,
+            "name": "Opis usterki",
+            "category": "device",
+            "type": "TextArea",
+            "values": [],
+            "value": "Pęknięty wyświetlacz, konto Google",
+            "isMain": false
+          },
+          {
+            "id": 51,
+            "name": "Uwagi",
+            "category": "device",
+            "type": "TextArea",
+            "values": [],
+            "value": "Naprawa do 200zł",
+            "isMain": false
+          }
+        ],
+        "services": [
+          {
+            "id": 1,
+            "name": "Wymiana wyświetlacza",
+            "parameters": [
+              {
+                "id": 50,
+                "name": "Test 1"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Wymiana szybki",
+            "parameters": [
+              {
+                "id": 50,
+                "name": "Test 2"
+              }
+            ]
+          }
+        ]
+      },
+      "notes": [
+        {
+          "id": 1,
+          "date": "2022-10-03",
+          "text": "Notatka",
+          "author": "Damian Michalski"
+        },
+        {
+          "id": 2,
+          "date": "2022-10-03",
+          "text": "Notatka",
+          "author": "Kamil Szczypura"
+        }
+      ],
+      "workerId": 1,
+      "workerName": "Damian Michalski"
+    }
+  ],
+  "parameters": [
+    {
+      "id": 1,
+      "name": "Marka",
+      "alias": "M",
+      "category": "device",
+      "type": "SingleSelect",
+      "isRequired": true
+    },
+    {
+      "id": 2,
+      "name": "Model",
+      "alias": "m",
+      "category": "device",
+      "type": "SingleSelect",
+      "isRequired": true
+    },
+    {
+      "id": 3,
+      "name": "Symbol",
+      "alias": "M",
+      "category": "device",
+      "type": "TextInput",
+      "values": [],
+      "isRequired": true
+    },
+    {
+      "id": 4,
+      "name": "IMEI",
+      "alias": "I",
+      "category": "device",
+      "type": "TextInput",
+      "values": [],
+      "isRequired": true
+    },
+    {
+      "id": 5,
+      "name": "Blokada ekranu (PIN, Hasło)",
+      "alias": "Bph",
+      "category": "device",
+      "type": "TextInput",
+      "values": [],
+      "isRequired": true
+    },
+    {
+      "id": 6,
+      "name": "Blokada ekranu (Wzór)",
+      "alias": "Bw",
+      "category": "device",
+      "type": "Other",
+      "values": [],
+      "isRequired": true
+    },
+    {
+      "id": 7,
+      "name": "Opis usterki",
+      "alias": "O",
+      "category": "device",
+      "type": "TextArea",
+      "values": [],
+      "isRequired": true
+    },
+    {
+      "id": 50,
+      "name": "Naprawa do",
+      "alias": "Nd",
+      "category": "service",
+      "type": "TextInput",
+      "isRequired": true
+    },
+    {
+      "id": 51,
+      "name": "Uwagi",
+      "alias": "U",
+      "category": "device",
+      "type": "TextArea"
+    },
+    {
+      "id": 52,
+      "name": "Zamiennik",
+      "alias": "Z",
+      "category": "service",
+      "type": "SingleSelect"
+    }
+  ],
+  "parameterValues": [
+    {
+      "id": 2,
+      "text": "Apple",
+      "parameterId": 1
+    },
+    {
+      "id": 3,
+      "text": "Samsung",
+      "parameterId": 1
+    },
+    {
+      "id": 4,
+      "text": "Nokia",
+      "parameterId": 1
+    },
+    {
+      "id": 5,
+      "text": "iPhone 7 Plus",
+      "parameterId": 2
+    },
+    {
+      "id": 8,
+      "text": "Xiaomi",
+      "parameterId": 1
+    },
+    {
+      "id": 9,
+      "text": "test"
+    },
+    {
+      "id": 10,
+      "text": "Tak",
+      "parameterId": 52
+    },
+    {
+      "id": 11,
+      "text": "Nie",
+      "parameterId": 52
+    }
+  ],
+  "deviceParameters": [
+    {
+      "id": 1,
+      "name": "Marka",
+      "alias": "M",
+      "type": "MultiSelect",
+      "isRequired": true
+    },
+    {
+      "id": 2,
+      "name": "Model",
+      "alias": "m",
+      "type": "MultiSelect",
+      "isRequired": true
+    },
+    {
+      "id": 3,
+      "name": "Symbol",
+      "alias": "M",
+      "type": "TextInput",
+      "isRequired": true
+    },
+    {
+      "id": 4,
+      "name": "IMEI",
+      "alias": "I",
+      "type": "TextInput",
+      "isRequired": true
+    },
+    {
+      "id": 5,
+      "name": "Blokada ekranu (PIN, Hasło)",
+      "alias": "Bph",
+      "type": "TextInput",
+      "isRequired": true
+    },
+    {
+      "id": 6,
+      "name": "Blokada ekranu (Wzór)",
+      "alias": "Bw",
+      "type": "Other",
+      "isRequired": true
+    },
+    {
+      "id": 7,
+      "name": "Opis usterki",
+      "alias": "O",
+      "type": "TextArea",
+      "isRequired": true
+    }
+  ],
+  "paymentMethods": [
+    {
+      "name": "Gotówka",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Za pobraniem"
+    },
+    {
+      "id": 3,
+      "name": "Przelew"
+    },
+    {
+      "id": 4,
+      "name": "Karta płatnicza"
+    }
+  ],
+  "departments": [
+    {
+      "name": "Radom, Katowicka",
+      "firstName": "Tomasz",
+      "lastName": "Trybuła",
+      "companyName": "Strefa GSM",
+      "email": "tomaszhurtgsm@gmail.com",
+      "phoneNumber": "880880860",
+      "street": "Katowicka",
+      "houseNo": "1",
+      "flatNo": "1",
+      "postCode": "26600",
+      "city": "Radom",
+      "country": "Polska",
+      "id": 1
+    },
+    {
+      "name": "Radom, Klwatecka",
+      "firstName": "Tomasz",
+      "lastName": "Trybuła",
+      "companyName": "Strefa GSM",
+      "email": "kontaktecolife@gmail.com",
+      "phoneNumber": "880880860",
+      "street": "Klwatecka",
+      "houseNo": "1",
+      "flatNo": "72T",
+      "postCode": "26600",
+      "city": "Radom",
+      "country": "Polska",
+      "id": 2
+    }
+  ],
+  "services": [
+    {
+      "name": "Wymiana wyświetlacza",
+      "actions": [
+        {
+          "id": 3,
+          "name": "Montaż nowego wyświetlacza",
+          "isChecked": true,
+          "isVisible": true
+        },
+        {
+          "id": 4,
+          "name": "Wgranie nowego softu",
+          "isChecked": true,
+          "isVisible": true
+        },
+        {
+          "id": 5,
+          "name": "Rozklejenie szybki z LCD",
+          "isChecked": true,
+          "isVisible": true
+        }
+      ],
+      "parameters": [
+        {
+          "id": 50,
+          "category": "service",
+          "name": "Naprawa do",
+          "alias": "",
+          "type": "TextInput"
+        },
+        {
+          "id": 52,
+          "category": "service",
+          "name": "Zamiennik",
+          "alias": "",
+          "type": "SingleSelect"
+        }
+      ],
+      "orderId": 1,
+      "id": 1
+    },
+    {
+      "name": "Wymiana szybki",
+      "actions": [
+        {
+          "id": 1,
+          "name": "Demontaż starego wyświetlacza",
+          "isChecked": true,
+          "isVisible": true
+        },
+        {
+          "id": 3,
+          "name": "Montaż nowego wyświetlacza",
+          "isChecked": true,
+          "isVisible": true
+        }
+      ],
+      "parameters": [],
+      "price": 50,
+      "orderId": 1,
+      "id": 2
+    }
+  ],
+  "serviceActions": [
+    {
+      "id": 1,
+      "serviceTypeId": 1,
+      "name": "Demontaż starego wyświetlacza",
+      "defaultRate": 20
+    },
+    {
+      "id": 2,
+      "serviceTypeId": 2,
+      "name": "Czyszczenie telefonu",
+      "defaultRate": 10
+    },
+    {
+      "id": 3,
+      "serviceTypeId": 1,
+      "name": "Montaż nowego wyświetlacza",
+      "defaultRate": 30
+    }
+  ],
+  "shippingMethods": [
+    {
+      "id": 1,
+      "name": "Odbiór osobisty"
+    },
+    {
+      "id": 2,
+      "name": "Wysyłka kurierem"
+    }
+  ],
+  "serviceStatuses": [
+    {
+      "name": "W trakcie naprawy",
+      "emailMessage": "",
+      "smsMessage": "Wiadomość SMS do klienta...",
+      "id": 1,
+      "order": 1
+    },
+    {
+      "id": 2,
+      "name": "Diagnozowanie usterki",
+      "emailMessage": "Wiadomość e-mail do klienta...",
+      "smsMessage": "Wiadomość SMS do klienta...",
+      "order": 3
+    },
+    {
+      "name": "W drodze do klienta",
+      "emailMessage": "Wiadomość e-mail do klienta...",
+      "smsMessage": "",
+      "id": 3,
+      "order": 2
+    }
+  ],
+  "settlementStatuses": [
+    {
+      "name": "Transakcja nierozliczona",
+      "emailMessage": "",
+      "smsMessage": "",
+      "id": 1
+    },
+    {
+      "name": "Transakcja w trakcie rozliczania",
+      "emailMessage": "",
+      "smsMessage": "",
+      "id": 2
+    },
+    {
+      "name": "Transakcja rozliczona",
+      "emailMessage": "",
+      "smsMessage": "",
+      "id": 3
+    }
+  ],
+  "workers": [
+    {
+      "firstName": "Damian",
+      "lastName": "Michalski",
+      "workPositionId": 1,
+      "workPosition": "Serwisant",
+      "contractSince": "2020-12-01",
+      "contractTo": "",
+      "contractNoTerm": true,
+      "salaryNoTax": 3738,
+      "salaryWithTax": 5002,
+      "id": 1
+    }
+  ],
+  "workPositions": [
+    {
+      "id": 1,
+      "name": "Serwisant"
+    },
+    {
+      "name": "Magazynier",
+      "id": 2
+    },
+    {
+      "name": "Sprzedawca",
+      "id": 3
+    }
+  ]
+}
